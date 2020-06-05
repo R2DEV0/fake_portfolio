@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css"/>
+    <title>Projects</title>
+</head>
+
+<body>
+    <div class='container' style="width:700px;">
+        <div>
+            <ul>
+                <li class='topBar'><a href="/">Home </a> | </li>
+                <li class='topBar'>Projects | </li>
+                <li class='topBar'><a href="/contact">Contact Info</a></li>
+            </ul>
+        </div>
+
+        <h2>Here is a list of all my projects!</h2>
+        <div class="thing">
+        @{
+            var ProjectList = new List<string>
+                {
+                    "Contract Manager",
+                    "Quiz of Death",
+                    "Really Fun Game"
+                };
+                foreach(var project in ProjectList)
+                {
+                    @if(project == "Contract Manager"){
+                        <img src="~/beer.jpeg" alt="beer">
+                        <h2 style="display:inline-block;">@project</h2>
+                        <p style="display:inline-block;">A really cool truck tracking application!</p>
+                        <hr/>
+                    }
+                    @if(project == "Quiz of Death"){
+                        <img src="~/cat.jpg" alt="cat">
+                        <h2 style="display:inline-block;">@project</h2>
+                        <p style="display:inline-block;">A super cool quiz application fun for the whole family!</p>
+                        <hr/>
+                        
+                    }
+                    @if(project == "Really Fun Game"){
+                        <img src="~/pizza.png" alt="pizza">
+                        <h2 style="display:inline-block;">@project</h2>
+                        <p style="display:inline-block;">Ultra fun terminal adventure game!</p>
+                        <hr/>
+                    }
+                }
+        }
+        </div>
+    </div>
+
+</body>
+
+</html>
